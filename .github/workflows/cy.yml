@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [master, develop]
+    branches: [main, develop]
   pull_request:
 
 permissions:
@@ -20,14 +20,14 @@ jobs:
           node-version: "22"
           cache: npm
 
-      - name: Install Dependencies
+      - name: install dependences
         run: npm ci
 
-      - name: API test
+      - name: API tests
         run: npm test
 
-      - name: Build Fronted
+      - name: Build Frontend
         run: npm run build
 
       - name: Build Api Docker Image
-        run: docker build -f apps/api/Dockerfiel -t moneycloud-api:ci
+        run: docker build -f apps/api/Dockerfile -t moneycloud-api:ci .
