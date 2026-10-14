@@ -1,5 +1,5 @@
 [build]
-    command = "npm run build -w @money/cloud/web"
+    command = "npm run build -w @moneycloud/web"
     publish = "apps/web/dist"
 
 [build.enviroment]
